@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | PLMun Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0e0e0;
+        }
+
+        header {
+            padding: 10px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgb(57, 27, 92);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo img {
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: #f39c12;
+        }
+
+        /* --- DROPDOWN STYLES --- */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(57, 27, 92);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+            border-radius: 0 0 10px 10px;
+            z-index: 1001;
+            top: 100%;
+            left: 20px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            margin-left: 0;
+            display: block;
+            font-size: 14px;
+            font-weight: normal;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f39c12;
+            color: white !important;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* --- CONTACT CARD STYLES --- */
+        .contact-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 85vh;
+            padding: 40px 20px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .contact-card h1 {
+            color: rgb(57, 27, 92);
+            margin-top: 0;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .input-group input, 
+        .input-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .send-btn {
+            background-color: rgb(57, 27, 92);
+            color: white;
+            padding: 12px 35px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .send-btn:hover {
+            background-color: #f39c12;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="Untitled_design__2_-removebg-preview.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="mainpage.html">Home</a>
+            
+            <div class="dropdown">
+                <a href="#">Portfolio ▾</a>
+                <div class="dropdown-content">
+                    <a href="sombise.html">Julius Sombise</a>
+                    <a href="james.html">James Penaflor</a>
+                    <a href="emmanuel.html">Emmanuel Ancheta</a>
+                    <a href="breant.html">Breant Gervacio</a>
+                    <a href="sean.html">Sean Castillo</a>
+                    <a href="barola.html">Limwel Barola</a>
+                </div>
+            </div>
+
+            <a href="contactus.html" class="active">Contact Us</a>
+        </nav>
+    </header>
+
+    <main class="contact-wrapper">
+        <section class="contact-card">
+            <h1>Contact the Developers</h1>
+            <p><strong>BSIT - IT1J Team</strong></p>
+            <p style="font-size: 0.85em; color: #666; margin-bottom: 25px;">
+                Sean Danielle, Julius, James, Emmanuel, Breant, and Limwel
+            </p>
+            
+            <form id="contactForm">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="userName" placeholder="Enter your name" required>
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="email@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Message</label>
+                    <textarea rows="4" placeholder="How can we help you?" required></textarea>
+                </div>
+                <button type="submit" class="send-btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            // This stops the page from trying to 'post' to a server and causing the 405 error
+            event.preventDefault();
+
+            const name = document.getElementById('userName').value;
+
+            // Show a custom success alert
+            alert("Thank you, " + name + "! Your message has been sent to the BSIT-IT1J developers.");
+
+            // Redirect back to the main page
+            window.location.href = "mainpage.html";
+        });
+    </script>
+
+</body>
+</html>

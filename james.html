@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | View</title>
+    <style>
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(215, 211, 217);
+            background-image: radial-gradient(rgba(57, 27, 92, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            font-family: Verdana, sans-serif;
+            color: #333;
+        }
+
+        /* --- SHARED HEADER FROM MAINPAGE --- */
+        header {
+            padding: 10px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgb(57, 27, 92);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-buttons a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-buttons a:hover { color: #ff9d00; }
+
+        /* --- DROPDOWN LOGIC --- */
+        .dropdown { position: relative; display: inline-block; }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(57, 27, 92);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+            border-radius: 0 0 10px 10px;
+            z-index: 1001;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            display: block;
+            font-weight: normal;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .dropdown-content a:hover { background-color: #ff9d00; }
+
+        .dropdown:hover .dropdown-content { display: block; }
+
+        /* --- PORTFOLIO CONTENT STYLES --- */
+        .portfolio-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .profile-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #ccc;
+            border: 6px solid #ff9d00;
+            object-fit: cover;
+        }
+
+        .info h1 { color: rgb(57, 27, 92); margin: 0; }
+        .section-header { color: rgb(57, 27, 92); border-left: 5px solid #ff9d00; padding-left: 15px; margin: 40px 0 20px; }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-tag {
+            background: rgb(57, 27, 92);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) { .profile-card { flex-direction: column; text-align: center; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="color: white; font-weight: bold; font-size: 18px;">JAMES' PORTFOLIO</div>
+        <nav class="nav-buttons">
+            <a href="mainpage.html">Home</a>
+            
+            <div class="dropdown">
+                <a href="#">Portfolio ▾</a>
+                <div class="dropdown-content">
+                    <a href="sombise.html">Julius Sombise</a>
+                    <a href="james.html">James Penaflor</a>
+                    <a href="emmanuel.html">Emmanuel Ancheta</a>
+                    <a href="breant.html">Breant Gervacio</a>
+                    <a href="sean.html">Sean Castillo</a>
+                    <a href="barola.html">Limwel Barola</a>
+                </div>
+            </div>
+            
+            <a href="contactus.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <div class="portfolio-container">
+        <div class="profile-card">
+            <img src="penaflor.jpg" alt="Sean" class="profile-img">
+            <div class="info">
+                <h1>James Richard D. Penaflor</h1>
+                <p>1st Year BSIT Student</p>
+                <p>Pamantasan ng Lungsod ng Muntinlupa</p>
+                <p style="font-style: italic; color: rgb(57, 27, 92); margin-top: 10px;">
+                    "The sky is the limit."
+                </p>
+            </div>
+        </div>
+
+        <h2 class="section-header">Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-tag">Drawing</div>
+            <div class="skill-tag">Sports</div>
+            <div class="skill-tag">Gaming</div>
+        </div>
+
+        <h2 class="section-header">About Me</h2>
+        <div style="background: rgba(255, 255, 255, 0.7); padding: 25px; border-radius: 15px; line-height: 1.8;">
+            I’m a BSIT student who lives at the intersection of code and coordinates. When I’m not building digital systems or exploring the latest tech, I’m navigating virtual worlds and mastering game mechanics.
+    </div>
+
+</body>
+</html>
