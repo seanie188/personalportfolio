@@ -1,6 +1,6 @@
 # 🌐 HexaCode: The Web-Technology Learning Hub
 ### BSIT - IT1J | Pamantasan ng Lungsod ng Muntinlupa
-**Course:** Web-Technologies  
+**Subject:** Web-Technologies  
 **Instructor:** Professor Rommel Dinoso
 
 ---
