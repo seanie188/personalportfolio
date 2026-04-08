@@ -17,6 +17,7 @@
             background-size: 30px 30px;
             font-family: Verdana, sans-serif;
             color: #333;
+            overflow-x: hidden;
         }
 
         header {
@@ -29,6 +30,8 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .header img {
@@ -51,7 +54,6 @@
         .nav-buttons a:hover {
             color: #ff9d00;
         }
-        /* --- DROPDOWN STYLES START --- */
 
         .dropdown {
             position: relative;
@@ -85,7 +87,6 @@
             display: block;
         }
 
-        /* --- DROPDOWN STYLES END --- */
         .social-sidebar {
             position: fixed;
             top: 50%;
@@ -261,11 +262,37 @@
             color: #ff9d00;
         }
 
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 10px 15px;
+            }
+            .header img {
+                width: 100px;
+            }
+            .nav-buttons {
+                gap: 12px;
+            }
+            .nav-buttons a {
+                font-size: 11px;
+                white-space: nowrap;
+            }
+            .image-row {
+                flex-direction: column;
+            }
+            .image-row img {
+                width: 100%;
+                height: auto;
+            }
+            .social-sidebar {
+                left: 10px;
+            }
+            .content-wrapper {
+                margin: 20px auto;
+            }
+        }
     </style>
 </head>
 <body>
-
-
 
     <header>
         <div class="header">
@@ -274,8 +301,6 @@
         
         <nav class="nav-buttons">
             <a href="index.html">Home</a>
-
-            <!-- DROPDOWN BUTTON -->
 
             <div class="dropdown">
                 <a href="#">Portfolio ▾</a>
@@ -348,12 +373,8 @@
             </p>
         </div>
 
-
-
         <div class="programs-container">
-
             <h1>Academic Programs in PLMUN</h1>
-
             <div class="program-grid">
                 <div class="college-box" style="grid-column: 1 / -1;">
                     <h3>Graduate Studies</h3>
@@ -396,7 +417,5 @@
             <a href="https://plmun.edu.ph" target="_blank" class="plmun-btn">Visit Official PLMun Website</a>
         </div>
     </div>
-    </div>
-
 </body>
 </html>
