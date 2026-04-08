@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
     <style>
-        /* --- 1. GLOBAL RESET (Fixes the top/side gaps) --- */
+        /* --- GLOBAL RESET --- */
         * {
             margin: 0;
             padding: 0;
@@ -22,12 +22,10 @@
             background-size: 30px 30px;
             font-family: Verdana, sans-serif;
             color: #333;
-            /* Prevents horizontal scrolling on small screens */
             overflow-x: hidden; 
         }
 
         header {
-            /* 2. Standardized padding and width */
             padding: 10px 40px;
             width: 100%;
             display: flex;
@@ -63,7 +61,7 @@
             color: #ff9d00;
         }
 
-        /* --- DROPDOWN STYLES --- */
+        /* --- DROPDOWN --- */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -87,13 +85,11 @@
             text-decoration: none;
             display: block;
             font-size: 14px;
-            font-weight: normal;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .dropdown-content a:hover {
             background-color: #ff9d00;
-            color: white !important;
         }
 
         .dropdown:hover .dropdown-content {
@@ -144,7 +140,6 @@
             font-size: 24px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             z-index: 100;
-            transition: 0.3s;
         }
 
         /* --- CONTENT WRAPPER --- */
@@ -168,6 +163,7 @@
             margin-top: 0;
             border-left: 5px solid rgb(57, 27, 92);
             padding-left: 15px;
+            margin-bottom: 20px;
         }
 
         .image-row {
@@ -185,49 +181,65 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
 
-        /* --- MOBILE MEDIA QUERIES --- */
-        @media (max-width: 768px) {
-            header {
-                padding: 10px 15px;
-            }
-
-            .header img {
-                width: 120px;
-            }
-
-            .nav-buttons {
-                gap: 10px;
-            }
-
-            .nav-buttons a {
-                font-size: 12px;
-            }
-
-            .image-row {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .image-row img {
-                width: 100%;
-                height: auto;
-            }
-
-            .content-wrapper {
-                margin: 20px auto;
-            }
+        .credentials { font-size: 13px; text-align: center; color: #555; margin-bottom: 40px; font-style: italic; }
+        
+        /* --- GRID STYLES --- */
+        .program-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
+            margin-top: 20px; 
         }
 
-        /* Original remaining styles... */
-        .credentials { font-size: 13px; text-align: center; color: #555; margin-bottom: 40px; font-style: italic; }
-        .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
-        .college-box { background: rgba(255, 255, 255, 0.5); padding: 20px; border-radius: 10px; border-top: 4px solid #ff9d00; }
-        .college-box h3 { margin-top: 0; color: rgb(57, 27, 92); font-size: 16px; text-transform: uppercase; }
-        .college-box ul { padding-left: 20px; margin: 0; font-size: 14px; }
-        .earning-units-box { margin-top: 25px; padding: 15px; background-color: rgb(57, 27, 92); color: white; border-radius: 10px; text-align: center; font-size: 14px; }
-        .external-link-section { text-align: center; margin-top: 50px; margin-bottom: 80px; padding: 40px; background: linear-gradient(135deg, rgb(57, 27, 92), #4b237a); border-radius: 20px; color: white; box-shadow: 0 10px 25px rgba(57, 27, 92, 0.3); }
-        .plmun-btn { display: inline-block; background-color: #ff9d00; color: white; padding: 12px 30px; border-radius: 50px; font-weight: bold; text-decoration: none; transition: 0.3s ease; }
-        a { color: rgb(57, 27, 92); text-decoration: none; }
+        .college-box { 
+            background: rgba(255, 255, 255, 0.5); 
+            padding: 20px; 
+            border-radius: 10px; 
+            border-top: 4px solid #ff9d00; 
+        }
+
+        .college-box h3 { margin-top: 0; color: rgb(57, 27, 92); font-size: 16px; text-transform: uppercase; margin-bottom: 10px; }
+        .college-box ul { padding-left: 20px; font-size: 14px; }
+        
+        .earning-units-box { 
+            margin-top: 25px; 
+            padding: 15px; 
+            background-color: rgb(57, 27, 92); 
+            color: white; 
+            border-radius: 10px; 
+            text-align: center; 
+            font-size: 14px; 
+        }
+
+        .external-link-section { 
+            text-align: center; 
+            margin-top: 50px; 
+            margin-bottom: 80px; 
+            padding: 40px; 
+            background: linear-gradient(135deg, rgb(57, 27, 92), #4b237a); 
+            border-radius: 20px; 
+            color: white; 
+        }
+
+        .plmun-btn { 
+            display: inline-block; 
+            background-color: #ff9d00; 
+            color: white; 
+            padding: 12px 30px; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            text-decoration: none; 
+            transition: 0.3s ease; 
+        }
+
+        /* --- MOBILE --- */
+        @media (max-width: 768px) {
+            header { padding: 10px 15px; }
+            .header img { width: 120px; }
+            .nav-buttons { gap: 10px; }
+            .image-row { flex-direction: column; align-items: center; }
+            .image-row img { width: 100%; height: auto; }
+        }
     </style>
 </head>
 <body>
@@ -262,8 +274,7 @@
     <div class="content-wrapper">
         <div class="introduction">
             <p>
-                <b>Greetings!</b> 
-                <br><br>
+                <b>Greetings!</b> <br><br>
                 We are 1st-year students of <b>Pamantasan ng Lungsod ng Muntinlupa</b> under Bachelor of Science in Information Technology (BSIT). 
                 As for our final project in Web-Technologies, we created this website to showcase our personal portfolios 
                 and our skills in web development and designing!
@@ -292,8 +303,7 @@
             </p>
         </div>
 
-      <div class="programs-container">
-
+        <div class="programs-container">
             <h1>Academic Programs in PLMUN</h1>
             <div class="program-grid">
                 <div class="college-box" style="grid-column: 1 / -1;">
@@ -304,9 +314,7 @@
                         <li>Master in Security and Correctional Administration</li>
                         <li>Master in Information Technology</li>
                         <li>Master of Science in Criminology</li>
-
                     </ul>
-
                 </div>
 
                 <div class="college-box">
@@ -328,14 +336,6 @@
                     </ul>
                 </div>
             </div>
-
-            <div class="earning-units-box">
-
-                <b>Earning Units:</b> Graduates of Non-Education degrees shall take 18 units of Professional Education courses to qualify for the LET.
-
-            </div>
-
-        </div>
 
             <div class="earning-units-box">
                 <b>Earning Units:</b> Graduates of Non-Education degrees shall take 18 units of Professional Education courses to qualify for the LET.
